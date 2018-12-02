@@ -1,0 +1,38 @@
+{
+  "name": "sass",
+  "version": "1.0.0",
+  "description": "Digging into the nuts and bolts of Sass.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pdcodes/sass-dev.git"
+  },
+  "keywords": [
+    "Sass",
+    "Development"
+  ],
+  "author": "Peter Dudka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pdcodes/sass-dev/issues"
+  },
+  "homepage": "https://github.com/pdcodes/sass-dev#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-declare": "^0.3.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-wrap": "^0.14.0"
+  },
+  "dependencies": {
+    "gulp-plumber": "^1.2.1",
+    "static-server": "^2.2.1"
+  }
+}
