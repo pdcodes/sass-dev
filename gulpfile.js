@@ -11,6 +11,8 @@ var sass = require('gulp-sass');
 var del = require('del');
 
 // Paths
+var DEST_PATH = 'public/dist';
+var STYLES_PATH = ''
 
 ////////////////
 //   Tasks    //
