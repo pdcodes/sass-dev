@@ -29,7 +29,8 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
-    "gulp-wrap": "^0.14.0"
+    "gulp-wrap": "^0.14.0",
+    "lodash": "^4.17.11"
   },
   "dependencies": {
     "gulp-plumber": "^1.2.1",
