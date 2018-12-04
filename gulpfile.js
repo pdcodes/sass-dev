@@ -32,7 +32,7 @@ gulp.task('scss', function() {
 			cascade: false
 		}))
 		.pipe(sass({
-			outputStyle: 'uncompressed'
+			outputStyle: 'compressed'
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(DEST_PATH))
