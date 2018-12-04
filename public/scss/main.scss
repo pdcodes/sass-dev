@@ -1,5 +1,6 @@
 /* Imports */
 @import "partials/_variables.scss";
+@import "mixins/_mixins.scss";
 
 /* Styles */
 body {
@@ -19,7 +20,19 @@ a {
   color: $link-color;
 }
 
+img {
+  display: block;
+}
+
+.warning-button {
+  @include warning;
+  @include large-text;
+  @include rounded;
+  padding: 9px 12px;
+}
+
 #header {
+  @include box;
 	height: $header-height;
 
   #main-menu {
