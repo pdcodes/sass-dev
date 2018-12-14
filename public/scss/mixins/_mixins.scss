@@ -1,7 +1,27 @@
 /* Mixins */
+@mixin google-font($font) {
+  $font: unquote($font);
+  // CSS imports can be interpolated using the #{} syntax
+  @import url(https://fonts.googleapis.com/css?family=#{$font})
+}
+
 @mixin warning {
   background-color: orange;
   color: #fff;
+}
+
+/* Variable arguments can be added using '...' */
+@mixin box-shadow($shadows...) {
+  box-shadow: $shadows;
+}
+
+// Content directive adds attributes after * html
+// * html is just the example for this IE6 
+// this is called "content passing"
+@mixin apply-to-ie-6 {
+  * html {
+    @content;
+  }
 }
 
 @mixin large-text {
@@ -11,14 +31,24 @@
   }
 }
 
-@mixin rounded {
-  border-radius: 6px;
+@mixin flex {
+  display: flex;
 }
 
-@mixin box {
+/* Default value is added with ": {value}" */
+@mixin rounded($radius: 6px) {
+  border-radius: $radius;
+}
+
+/* 
+ * Default values must be referenced explicitly
+ * if you wanted to use box(default radius, custom border)
+ * you would do so by adding box($border: {values};
+*/
+@mixin box($radius, $border: 1px solid black) {
   /* Mixins within mixins! */
-  @include rounded;
-  border: 1px solid #333;
+  @include rounded($radius);
+  border: $border;
 }
 
 @mixin fancy-links {

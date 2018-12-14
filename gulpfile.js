@@ -3,12 +3,14 @@ var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
-var autoprefixer = require('gulp-autoprefixer');
+var gulp_autoprefixer = require('gulp-autoprefixer');
+var autoprefixer = require('autoprefixer');
 var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var del = require('del');
 var livereload = require('gulp-livereload');
+var postcss = require('gulp-postcss');
 
 // Paths
 var DEST_PATH = 'public/dist';
@@ -27,12 +29,13 @@ gulp.task('scss', function() {
 			this.emit('end');
 		}))
 		.pipe(sourcemaps.init())
-		.pipe(autoprefixer({
+		// Compile scss THEN autoprefix!
+		.pipe(sass({
+			outputStyle: 'uncompressed'
+		}))
+		.pipe(gulp_autoprefixer({
 			browsers: ['last 2 versions'],
 			cascade: false
-		}))
-		.pipe(sass({
-			outputStyle: 'compressed'
 		}))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest(DEST_PATH))

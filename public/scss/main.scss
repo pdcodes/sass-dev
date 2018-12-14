@@ -1,6 +1,16 @@
 /* Imports */
-@import "partials/_variables.scss";
-@import "mixins/_mixins.scss";
+@import "partials/variables";
+@import "mixins/mixins";
+
+// SCSS Imports === CSS Imports in the following cases:
+//@import url()
+//@import "http://"
+//@import "filename.css"
+//@import "style-screen screen;"
+
+/* Fonts */
+@include google-font("Alegreya+Sans");
+@include google-font("Poppins");
 
 /* Styles */
 body {
@@ -27,13 +37,20 @@ img {
 .warning-button {
   @include warning;
   @include large-text;
-  @include rounded;
+  @include rounded(8px);
   padding: 9px 12px;
 }
 
+@include apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
+}
+
 #header {
-  @include box;
+  @include box(24px, 1px solid black);
 	height: $header-height;
+  @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
 
   #main-menu {
 
