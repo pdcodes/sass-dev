@@ -4,13 +4,11 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var gulp_autoprefixer = require('gulp-autoprefixer');
-var autoprefixer = require('autoprefixer');
 var plumber = require('gulp-plumber');
 var sourcemaps = require('gulp-sourcemaps');
 var sass = require('gulp-sass');
 var del = require('del');
 var livereload = require('gulp-livereload');
-var postcss = require('gulp-postcss');
 
 // Paths
 var DEST_PATH = 'public/dist';
