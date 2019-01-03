@@ -1,4 +1,5 @@
 /* Imports */
+@import "partials/functions";
 @import "partials/variables";
 @import "mixins/mixins";
 
@@ -16,7 +17,9 @@
 body {
   font-family: sans-serif;
   color: $text-color;
-  @media screen and (max-width: 960px) {
+  font-size: em(18px);
+
+  @include medium-screens {
     font-size: 125%;
   }
 }
@@ -31,6 +34,11 @@ p {
 
 a {
   color: $link-color;
+  
+  // Use "&:" for pseudo-states!
+  &:hover {
+    color: darken($link-color, 15%);
+  }
 }
 
 img {
@@ -56,8 +64,25 @@ img {
   @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
 
   #main-menu {
+    li {
+      display: inline-block;
+    }
 
+    a {
+      color: $menu-item-color;
+      padding: 6px 8px;
+      // Transparentize function reduces opacity
+      border-bottom: 1px solid transparentize(black, 1);
+      transition: border-bottom 0.5s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        // Opacify function adds opacity
+        border-bottom: 1px solid opacify(black, .5);
+    }
   }
+
+}
   
   #logo {
   }
@@ -73,9 +98,17 @@ img {
   margin-right: auto;
 
   #content {
+    float: left;
+    width: 6*$col;
   }
 
   #sidebar {
+    float: right;
+    width: 2*$col;
+
+    li {
+      list-style-type: none;
+    }
   }
 }
 
