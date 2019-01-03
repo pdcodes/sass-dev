@@ -1,4 +1,12 @@
 /* Mixins */
+// Mixins for media queries!
+@mixin small-screens() {
+  // Content passing is used extensively in responsive media query mixins
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
 @mixin google-font($font) {
   $font: unquote($font);
   // CSS imports can be interpolated using the #{} syntax

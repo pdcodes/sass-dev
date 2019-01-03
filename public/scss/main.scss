@@ -16,6 +16,9 @@
 body {
   font-family: sans-serif;
   color: $text-color;
+  @media screen and (max-width: 960px) {
+    font-size: 125%;
+  }
 }
 
 h1, h2, h3, h4 {
@@ -57,11 +60,17 @@ img {
   }
   
   #logo {
-
   }
 }
 
 #main {
+  width: $content-width;
+  @include small-screens { 
+    width: auto;
+    max-width: 960px; 
+  }
+  margin-left: auto;
+  margin-right: auto;
 
   #content {
   }
