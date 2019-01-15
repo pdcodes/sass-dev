@@ -1,0 +1,17 @@
+// Colors
+$text-color: #222;
+$theme-color: #170a48;
+$secondary-color: #f27731;
+$ternary-color: #ccf962;
+$link-color: $secondary-color;
+$menu-item-color: blue;
+
+// Fonts
+$text-font: "Poppins", Arial, sans-serif;
+$headline-font: "Alegreya+Sans", Georgia, serif;
+
+// Layout
+$content-width: 90vw;
+$header-height: 60px;
+$footer-height: 90px;
+$col: column-width($columns: 8);

@@ -1,39 +1,117 @@
+/* Imports */
+@import "partials/functions";
+@import "partials/variables";
+@import "mixins/mixins";
+
+// SCSS Imports === CSS Imports in the following cases:
+//@import url()
+//@import "http://"
+//@import "filename.css"
+//@import "style-screen screen;"
+
+/* Fonts */
+@include google-font("Alegreya+Sans");
+@include google-font("Poppins");
+
+/* Styles */
 body {
   font-family: sans-serif;
+  color: $text-color;
+  font-size: em(18px);
+
+  @include medium-screens {
+    font-size: 125%;
+  }
 }
 
 h1, h2, h3, h4 {
-	color: green;
+  font-family: $headline-font;
 }
 
 p {
-	display: flex;
+  font-family: $text-font;
 }
 
 a {
+  color: $link-color;
+  
+  // Use "&:" for pseudo-states!
+  &:hover {
+    color: darken($link-color, 15%);
+  }
+}
 
+img {
+  display: block;
+}
+
+.warning-button {
+  @include warning;
+  @include large-text;
+  @include rounded(8px);
+  padding: 9px 12px;
+}
+
+@include apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
 }
 
 #header {
+  @include box(24px, 1px solid black);
+	height: $header-height;
+  @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
 
   #main-menu {
+    li {
+      display: inline-block;
+    }
 
+    a {
+      color: $menu-item-color;
+      padding: 6px 8px;
+      // Transparentize function reduces opacity
+      border-bottom: 1px solid transparentize(black, 1);
+      transition: border-bottom 0.5s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        // Opacify function adds opacity
+        border-bottom: 1px solid opacify(black, .5);
+    }
   }
+
+}
   
   #logo {
-
   }
 }
 
 #main {
+  width: $content-width;
+  @include small-screens { 
+    width: auto;
+    max-width: 960px; 
+  }
+  margin-left: auto;
+  margin-right: auto;
 
   #content {
+    float: left;
+    width: 6*$col;
   }
 
   #sidebar {
+    float: right;
+    width: 2*$col;
+
+    li {
+      list-style-type: none;
+    }
   }
 }
 
 #footer {
-
+  height: $footer-height;
 }
