@@ -1,3 +1,4 @@
 # Gitignore file for Sass-Dev repo;
 node_modules
 node_modules/*
+package-lock.json
