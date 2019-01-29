@@ -61,7 +61,7 @@ function watchCSS(done) {
 ////////////////
 //  Exports   //
 ////////////////
-exports.build = series(clean, scss, watchCSS);
+exports.build = series(clean, parallel(scss, watchCSS));
 exports.watch = watchCSS;
 exports.clean = clean;
 exports.scss = scss;
