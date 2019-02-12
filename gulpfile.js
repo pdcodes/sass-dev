@@ -33,7 +33,7 @@ function scss() {
 		}))
 		.pipe(sourcemaps.init())
 		.pipe(sass({
-			outputStyle: 'uncompressed'
+			outputStyle: 'compact'
 		}))
 		.pipe(gulp_autoprefixer({
 			browsers: ['last 2 versions'],
