@@ -83,6 +83,10 @@ img {
   background-color: yellow;
 }
 
+// @mixins/@include generate more styles but fewer selectors in your compiled code
+// @extend generates more selectors but fewer repeated styles in your compiles code
+// Generally speaking, though, @extend and @include are both valid forms of inheritance
+
 @include apply-to-ie-6 {
   body {
     font-size: 125%;
