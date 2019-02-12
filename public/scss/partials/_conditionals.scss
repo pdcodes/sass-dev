@@ -1,0 +1,34 @@
+// Control Flow!
+/*
+ * Conditionals in SASS work very much like they do in programming
+ * languages. You can simply set variables to be true/false and then
+ * make programmatic changes to the styles using the syntax below.
+*/
+
+$contrast: normal;
+
+.contrast {
+	@if $contrast == normal {
+		color: black;
+	} @else if $contrast == high {
+		color: white;
+	} @else {
+		color: green;
+	}
+}
+
+/*
+ * This can be combined with other features
+ * such as functions and variables to generate
+ * entire themes, as is the case with Paya, where the theme
+ * code should stay the same, but for certain differences
+ * in color. One great way of extending a theme for a
+ * specific site or configuration is to use content-passing
+ * with mixins to add functionality ONLY in certain cases.
+*/
+
+
+/*
+ * You can also use for loops!
+*/
+
