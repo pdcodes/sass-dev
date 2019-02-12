@@ -52,6 +52,37 @@ img {
   padding: 9px 12px;
 }
 
+// You can @extend styles using any existing 
+// class or single-element selector...mixins
+// can also be used here; The only thing that WON'T
+// work here is adding multiple (@extend .warning-button, .something) 
+// or child selectors (@extend .warning-button p)
+.cta-button {
+  @extend .warning-button;
+  @include rounded;
+  font-weight: bold;
+}
+
+// You can also chain extensions together; to make this work within
+// a media query, you'd have to extend ONLY WIHTIN the media query;
+// the !optional flag can be added to extend the class ONLY if it exists;
+.super-cta-button {
+  @extend .cta-button !optional;
+  text-decoration: underline;
+}
+
+// You can also define extend-only styles that do not get carried
+// into the compiled output (only inherited for other elements)
+%highlight {
+  font-style: italic;
+}
+
+.sub-title {
+  @extend %highlight;
+  font-size: em(20px);
+  background-color: yellow;
+}
+
 @include apply-to-ie-6 {
   body {
     font-size: 125%;
